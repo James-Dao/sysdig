@@ -859,6 +859,14 @@ private:
 	// filters per event type.
 	list<sinsp_filter *> *m_filter_by_evttype[PPM_EVENT_MAX];
 
+	// It's possible to add an event type filter with an empty
+	// list of event types, meaning it should run for all event
+	// types.
+	list<sinsp_filter *> m_catchall_evttype_filters;
+
+	// This holds all the filters in
+	// m_filter_by_evttype/m_catchall_evttype_filters, so they can
+	// be cleaned up.
 	list<sinsp_filter *> m_evttype_filters;
 #endif
 
